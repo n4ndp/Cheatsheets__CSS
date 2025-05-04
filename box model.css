@@ -1,0 +1,60 @@
+/*
+    +---------------------------+
+    |          margin           |
+    |  +---------------------+  |
+    |  |       border        |  |
+    |  |  +---------------+  |  |
+    |  |  |    padding    |  |  |
+    |  |  |  +---------+  |  |  |
+    |  |  |  | content |  |  |  |
+    |  |  |  +---------+  |  |  |
+    |  |  +---------------+  |  |
+    |  +---------------------+  |
+    +---------------------------+
+*/
+
+.box {box-sizing: content-box;} /* default value */
+/* content-box: width and height only include content */
+
+.box{box-sizing: border-box;}
+/* border-box: width and height include padding and border */
+
+.box {
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+  
+    /* o shorthand: */
+    padding: 10px 15px;             /* top/bottom, right/left */
+    padding: 10px 15px 20px;        /* top, right/left, bottom */
+    padding: 10px 15px 20px 25px;   /* top, right, bottom, left */
+
+    /* margin has similar syntax to padding */
+}
+
+.box {
+    margin: 0 auto;                 /* common centering technique */
+}
+
+.box {
+    border: 2px solid #333;                           /* width | style | color */
+    
+    /* Individual sides */
+    border-top: 1px dashed red;
+    border-right: 2px dotted blue;
+    border-bottom: 3px double green;
+    border-left: 4px groove purple;
+
+    /* Individual properties */
+    border-width: 1px 2px 3px 4px;                      /* top | right | bottom | left */
+    border-style: solid dotted dashed double;
+    border-color: red green blue black;
+    
+    border-radius: 5px;                                 /* rounded corners */
+    border-radius: 10px 5px;                            /* top-left/bottom-right | top-right/bottom-left */
+    border-radius: 10px 5px 15px;                       /* top-left | top-right/bottom-left | bottom-right */
+    border-radius: 10px 5px 15px 20px;                  /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 50%;             /* circle */
+    border-radius: 50% 25%;         /* ellipse */
+}
