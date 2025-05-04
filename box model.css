@@ -58,3 +58,57 @@
     border-radius: 50%;             /* circle */
     border-radius: 50% 25%;         /* ellipse */
 }
+
+.box {
+    overflow: visible;      /* default value */
+    overflow: hidden;       /* content is clipped*/
+    overflow: scroll;       /* content is clipped, scrollbars are added */
+    overflow: auto;         /* content is clipped, scrollbars are added only if needed */
+}
+
+.box {
+    overflow: hidden;
+    text-overflow: ellipsis;    /* adds "..." to the end of the text if it overflows */
+}
+
+.box {
+    display: block;             /* default value for div */
+    display: inline;            /* no line break before/after element */
+    display: inline-block;      /* no line break, but allows width/height */
+    display: flex;              /* creates a flex container */
+    display: grid;              /* creates a grid container */
+}
+
+/* visibility: hidden vs display: none
+    visibility: hidden: element is hidden but still takes up space in the layout
+    display: none: element is removed from the layout, no space taken up
+*/
+
+.box {
+    position: static;    /* default */
+    position: relative;  /* stays in flow, offset using top/right/bottom/left */
+    position: absolute;  /* removed from flow, positioned relative to nearest non-static ancestor */
+    position: fixed;     /* removed from flow, positioned relative to viewport, stays fixed on scroll */
+}
+
+.box {
+    position: absolute;
+    top: 10px;           /* offset from top */
+    right: 20px;         /* offset from right */
+    bottom: 30%;        /* offset from bottom */
+    left: 40%;          /* offset from left */
+
+    /* o shorthand: */
+    inset: 10px;         /* all sides 10px */
+    inset: 10px 20px;    /* top/bottom, right/left */
+    inset: 10px 20px 30px; /* top, right/left, bottom */
+    inset: 10px 20px 30px 40px; /* top, right, bottom, left */
+
+    z-index: 1;          /* stacking order, higher number = on top */
+}
+
+/* how to center an element? 
+    position: absolute;
+    margin: auto;
+    inset: 0;
+*/
