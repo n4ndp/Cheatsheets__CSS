@@ -1,0 +1,37 @@
+p { }                   /* tag */
+.class-name { }         /* class */
+#id-name { }            /* id */
+* { }                   /* universal */
+div p { }               /* descendant */
+div > p { }             /* direct child */
+div + p { }             /* adjacent sibling */
+div ~ p { }             /* general sibling */
+a[href] { }             /* element with attribute */
+input[type="text"] { }  /* exact attribute value */
+[title^="Hello"] { }    /* begins with */
+[title$="world"] { }    /* ends with */
+[title*="mid"] { }      /* contains */
+
+a:hover { }             /* mouse over */
+input:focus { }         /* input focus */
+button:active { }       /* button pressed */
+a:visited { }           /* visited link */
+
+li:first-child { }      /* first child */
+li:last-child { }       /* last child */
+li:nth-child(2) { }     /* second child */
+li:nth-child(odd) { }   /* odd child */
+li:nth-child(even) { }  /* even child */
+p:not(.class) { }       /* not class */
+
+p::before { }           /* before pseudo-element */
+p::after { }            /* after pseudo-element */
+
+/* Specificity Hierarchy
+    Inline styles               → 1000 (1,0,0,0)
+    ID selectors (#id)          → 0100 (0,1,0,0)
+    Class selectors (.class)    → 0010 (0,0,1,0)
+    Element selectors (div, p)  → 0001 (0,0,0,1)
+    
+    !important: Overrides all other rules, even inline styles.
+*/
