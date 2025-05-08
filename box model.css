@@ -13,103 +13,98 @@
     +---------------------------+
 */
 
-.box {box-sizing: content-box;} /* default value */
-/* content-box: width and height only include content */
-
-.box{box-sizing: border-box;}
-/* border-box: width and height include padding and border */
+.box { box-sizing: content-box; }     /* default: width/height = only content */
+.box { box-sizing: border-box; }      /* width/height = content + padding + border */
 
 .box {
     padding-top: 10px;
     padding-right: 15px;
     padding-bottom: 20px;
     padding-left: 25px;
-  
-    /* o shorthand: */
-    padding: 10px 15px;             /* top/bottom, right/left */
-    padding: 10px 15px 20px;        /* top, right/left, bottom */
-    padding: 10px 15px 20px 25px;   /* top, right, bottom, left */
 
-    /* margin has similar syntax to padding */
+    /* shorthand: */
+    padding: 10px 15px;               /* top/bottom, right/left */
+    padding: 10px 15px 20px;          /* top, right/left, bottom */
+    padding: 10px 15px 20px 25px;     /* top, right, bottom, left */
+
+    /* margin uses same syntax */
 }
 
 .box {
-    margin: 0 auto;                 /* common centering technique */
-}
+    border: 2px solid #333;                /* width | style | color */
 
-.box {
-    border: 2px solid #333;                           /* width | style | color */
-    
-    /* Individual sides */
+    /* individual sides */
     border-top: 1px dashed red;
     border-right: 2px dotted blue;
     border-bottom: 3px double green;
     border-left: 4px groove purple;
 
-    /* Individual properties */
-    border-width: 1px 2px 3px 4px;                      /* top | right | bottom | left */
+    /* individual properties */
+    border-width: 1px 2px 3px 4px;          /* top | right | bottom | left */
     border-style: solid dotted dashed double;
     border-color: red green blue black;
-    
-    border-radius: 5px;                                 /* rounded corners */
-    border-radius: 10px 5px;                            /* top-left/bottom-right | top-right/bottom-left */
-    border-radius: 10px 5px 15px;                       /* top-left | top-right/bottom-left | bottom-right */
-    border-radius: 10px 5px 15px 20px;                  /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: 50%;             /* circle */
-    border-radius: 50% 25%;         /* ellipse */
+
+    /* border-radius */
+    border-radius: 5px;                      /* all corners */
+    border-radius: 10px 5px;                 /* top-left/bottom-right | top-right/bottom-left */
+    border-radius: 10px 5px 15px;            /* top-left | top-right/bottom-left | bottom-right */
+    border-radius: 10px 5px 15px 20px;       /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 50%;                      /* circle */
+    border-radius: 50% 25%;                  /* ellipse */
 }
 
 .box {
-    overflow: visible;      /* default value */
-    overflow: hidden;       /* content is clipped*/
-    overflow: scroll;       /* content is clipped, scrollbars are added */
-    overflow: auto;         /* content is clipped, scrollbars are added only if needed */
+    display: block;           /* line break, full width */
+    display: inline;          /* no line break */
+    display: inline-block;    /* inline layout, allows width/height */
+    display: flex;            /* flex container */
+    display: grid;            /* grid container */
 }
 
 .box {
-    overflow: hidden;
-    text-overflow: ellipsis;    /* adds "..." to the end of the text if it overflows */
-}
-
-.box {
-    display: block;             /* default value for div */
-    display: inline;            /* no line break before/after element */
-    display: inline-block;      /* no line break, but allows width/height */
-    display: flex;              /* creates a flex container */
-    display: grid;              /* creates a grid container */
-}
-
-/* visibility: hidden vs display: none
-    visibility: hidden: element is hidden but still takes up space in the layout
-    display: none: element is removed from the layout, no space taken up
-*/
-
-.box {
-    position: static;       /* default */
-    position: relative;     /* stays in flow, offset using top/right/bottom/left */
-    position: absolute;     /* removed from flow, positioned relative to nearest non-static ancestor */
-    position: fixed;        /* removed from flow, positioned relative to viewport, stays fixed on scroll */
-    position: sticky;       /* behaves like relative until a certain scroll position, then behaves like fixed */
+    position: static;     /* default: in normal flow, offsets ignored */
+    position: relative;   /* stays in flow, can be offset */
+    position: absolute;   /* removed from flow; positioned relative to nearest non-static ancestor */
+    position: fixed;      /* removed from flow; positioned relative to viewport, stays fixed */
+    position: sticky;     /* behaves like relative until scroll threshold, then sticks */
 }
 
 .box {
     position: absolute;
-    top: 10px;              /* offset from top */
-    right: 20px;            /* offset from right */
-    bottom: 30%;            /* offset from bottom */
-    left: 40%;              /* offset from left */
+    top: 10px;
+    right: 20px;
+    bottom: 30%;
+    left: 40%;
 
-    /* o shorthand: */
-    inset: 10px;                    /* all sides 10px */
+    /* shorthand: */
+    inset: 10px;                    /* all sides */
     inset: 10px 20px;               /* top/bottom, right/left */
     inset: 10px 20px 30px;          /* top, right/left, bottom */
     inset: 10px 20px 30px 40px;     /* top, right, bottom, left */
 
-    z-index: 1;                     /* stacking order, higher number = on top */
+    z-index: 1;                     /* controls stacking order */
 }
 
-/* how to center an element? 
+.box {
+    overflow: visible;              /* default: content is not clipped */
+    overflow: hidden;               /* hides overflow */
+    overflow: scroll;               /* always shows scrollbars */
+    overflow: auto;                 /* scrollbars only if needed */
+}
+
+.box {
+    overflow: hidden;
+    text-overflow: ellipsis;  /* adds "..." when text overflows (requires overflow + nowrap) */
+}
+
+/* visibility vs display:
+    visibility: hidden   -> hides element, space remains
+    display: none        -> removes element from layout
+*/
+
+/* centering with absolute positioning */
+.box {
     position: absolute;
     margin: auto;
     inset: 0;
-*/
+}

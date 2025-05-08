@@ -1,37 +1,30 @@
-p { }                   /* tag */
-.class-name { }         /* class */
-#id-name { }            /* id */
-* { }                   /* universal */
-div p { }               /* descendant */
-div > p { }             /* direct child */
-div + p { }             /* adjacent sibling */
-div ~ p { }             /* general sibling */
-a[href] { }             /* element with attribute */
-input[type="text"] { }  /* exact attribute value */
-[title^="Hello"] { }    /* begins with */
-[title$="world"] { }    /* ends with */
-[title*="mid"] { }      /* contains */
+p { }                   /* targets all <p> elements */
+.class-name { }         /* targets elements with class="class-name" */
+#id-name { }            /* targets element with id="id-name" */
+* { }                   /* targets all elements */
 
-a:hover { }             /* mouse over */
-input:focus { }         /* input focus */
-button:active { }       /* button pressed */
-a:visited { }           /* visited link */
+div p { }               /* <p> descendants of <div> (any nesting level) */
+div > p { }             /* direct child <p> of <div> */
+div + p { }             /* first <p> immediately after <div> */
+div ~ p { }             /* all <p> siblings following <div> */
 
-li:first-child { }      /* first child */
-li:last-child { }       /* last child */
-li:nth-child(2) { }     /* second child */
-li:nth-child(odd) { }   /* odd child */
-li:nth-child(even) { }  /* even child */
-p:not(.class) { }       /* not class */
+a[href] { }             /* <a> elements with href attribute */
+input[type="text"] { }  /* <input> with exact type="text" */
+[title^="Hello"] { }    /* elements whose title begins with "Hello" */
+[title$="world"] { }    /* elements whose title ends with "world" */
+[title*="mid"] { }      /* elements whose title contains "mid" */
 
-p::before { }           /* before pseudo-element */
-p::after { }            /* after pseudo-element */
+a:hover { }             /* when mouse hovers over <a> */
+input:focus { }         /* when <input> has keyboard focus */
+button:active { }       /* while <button> is being clicked */
+a:visited { }           /* styling visited <a> links */
 
-/* Specificity Hierarchy
-    Inline styles               → 1000 (1,0,0,0)
-    ID selectors (#id)          → 0100 (0,1,0,0)
-    Class selectors (.class)    → 0010 (0,0,1,0)
-    Element selectors (div, p)  → 0001 (0,0,0,1)
-    
-    !important: Overrides all other rules, even inline styles.
-*/
+li:first-child { }      /* first <li> in parent */
+li:last-child { }       /* last <li> in parent */
+li:nth-child(2) { }     /* second <li> in parent */
+li:nth-child(odd) { }   /* every odd <li> (1st, 3rd...) */
+li:nth-child(even) { }  /* every even <li> (2nd, 4th...) */
+p:not(.class) { }       /* <p> elements without .class */
+
+p::before { }           /* insert content before <p> */
+p::after { }            /* insert content after <p> */

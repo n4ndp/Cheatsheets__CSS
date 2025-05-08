@@ -1,0 +1,73 @@
+.box {
+    display: flex;
+    flex-direction: row;                 /* default: main axis is horizontal */
+    flex-direction: row-reverse;
+    flex-direction: column;              /* main axis is vertical */
+    flex-direction: column-reverse;
+
+    flex-wrap: nowrap;                   /* default: no wrapping */
+    flex-wrap: wrap;                     /* items wrap to next line */
+    flex-wrap: wrap-reverse;
+
+    /* shorthand: direction + wrap */
+    flex-flow: row wrap;
+}
+
+.box {
+    justify-content: flex-start;         /* items aligned to start of main axis */
+    justify-content: flex-end;           /* items aligned to end of main axis */
+    justify-content: center;             /* items centered on main axis */
+    justify-content: space-between;      /* equal space *between*, no space at ends */
+    justify-content: space-around;       /* equal space *around* each item */
+    justify-content: space-evenly;       /* equal space between all (including edges) */
+}
+
+.box {
+    align-items: stretch;                /* items stretch to fill cross axis (default) */
+    align-items: flex-start;             /* items aligned to start of cross axis */
+    align-items: flex-end;               /* items aligned to end of cross axis */
+    align-items: center;                 /* items centered on cross axis */
+    align-items: baseline;               /* items aligned by text baseline */
+}
+
+.box {
+    align-content: stretch;              /* lines stretch to fill container (default) */
+    align-content: flex-start;           /* lines packed to start of cross axis */
+    align-content: flex-end;             /* lines packed to end of cross axis */
+    align-content: center;               /* lines centered on cross axis */
+    align-content: space-between;        /* lines spaced evenly, no space at ends */
+    align-content: space-around;         /* lines spaced with space around */
+    align-content: space-evenly;         /* equal space between all lines */
+}
+
+.item {
+    align-self: auto;                    /* default: inherits from parent */
+    align-self: flex-start;              /* overrides for specific item */
+    align-self: flex-end;
+    align-self: center;
+    align-self: stretch;
+    align-self: baseline;
+}
+
+.item {
+    flex-grow: 0;                        /* default: item does not grow */
+    flex-grow: 1;                        /* item grows to fill remaining space */
+
+    flex-shrink: 1;                      /* default: item can shrink if needed */
+    flex-shrink: 0;                      /* item won’t shrink */
+
+    flex-basis: auto;                    /* initial size before growing/shrinking */
+    flex-basis: 100px;                   /* fixed starting size */
+
+    /* shorthand: grow 1, shrink 1, basis auto */
+    flex: auto;
+
+    /* shorthand: grow 1, shrink 1, basis 0 */
+    flex: 1;
+}
+
+.item {
+    order: 0;                            /* default order */
+    order: 1;                            /* higher value = later position */
+    order: -1;                           /* lower value = earlier position */
+}
